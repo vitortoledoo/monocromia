@@ -64,6 +64,15 @@
             <button class="seg-btn" type="button" data-filter="nails">Nails</button>
           </div>
 
+          <div class="segmented" role="tablist" aria-label="Filtro por profissional">
+            <button class="seg-btn is-active" type="button" data-pro-filter="all">All</button>
+            <button class="seg-btn" type="button" data-pro-filter="ana">Ana</button>
+            <button class="seg-btn" type="button" data-pro-filter="let">Bia</button>
+            <button class="seg-btn" type="button" data-pro-filter="vanne">Carol</button>
+            <button class="seg-btn" type="button" data-pro-filter="letxx">Dani</button>
+            <button class="seg-btn" type="button" data-pro-filter="nath">Erik</button>
+          </div>
+
           <label class="search">
             <span class="sr-only">Buscar por título ou tag</span>
             <input type="search" name="q" placeholder="Buscar por título ou tag…" autocomplete="off" data-portfolio-search />
@@ -71,6 +80,7 @@
         </div>
 
         <div class="container">
+          <div class="portfolio-grouped" data-portfolio-grouped></div>
           <div class="grid grid-4 gallery" data-portfolio-grid>
             <!-- fallback sem JS -->
             <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 01"><img src="../assets/images/work-01.jpg" alt="Trabalho 01" loading="lazy" width="800" height="800" /></button></figure>

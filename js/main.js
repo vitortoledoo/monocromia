@@ -428,36 +428,122 @@
 
   function initPortfolioPage(data) {
     const grid = $("[data-portfolio-grid]");
+    const grouped = $("[data-portfolio-grouped]");
     const empty = $("[data-portfolio-empty]");
     const controls = $("[data-portfolio-controls]");
     const search = $("[data-portfolio-search]");
     if (!grid || !controls) return;
 
     let activeCategory = "all";
+    let activePro = "all";
     let query = "";
+    const esc = COMPONENTS.escapeHtml;
+    const proMeta = {
+      ana: { name: "Ana", role: "Tattoo" },
+      let: { name: "Bia", role: "Tattoo" },
+      vanne: { name: "Carol", role: "Lash" },
+      letxx: { name: "Dani", role: "Nails" },
+      nath: { name: "Erik", role: "Piercing" },
+    };
+
+    function getProMeta(pro) {
+      return proMeta[pro.slug] || { name: pro.name, role: pro.role || "" };
+    }
 
     function matches(w) {
       const inCategory = activeCategory === "all" || w.category === activeCategory;
-      if (!inCategory) return false;
+      const inPro = activePro === "all" || w.proSlug === activePro;
+      if (!inCategory || !inPro) return false;
       const q = query.trim().toLowerCase();
       if (!q) return true;
       const hay = [w.title, ...(w.tags || [])].join(" ").toLowerCase();
       return hay.includes(q);
     }
 
-    function render() {
+    function updateCategoryButtons() {
+      $all("[data-filter]", controls).forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-filter") === activeCategory));
+    }
+
+    function updateProButtons() {
+      $all("[data-pro-filter]", controls).forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-pro-filter") === activePro));
+    }
+
+    function renderFlat() {
       const list = data.works.filter(matches);
       grid.innerHTML = list.map((w) => COMPONENTS.renderWorkItem(w, { button: true })).join("");
+      grid.hidden = false;
+      if (grouped) grouped.hidden = true;
       if (empty) empty.hidden = list.length !== 0;
       initModalGallery(data, grid);
     }
 
+    function renderGrouped() {
+      if (!grouped) {
+        renderFlat();
+        return;
+      }
+
+      const sections = data.professionals
+        .map((pro) => {
+          const meta = getProMeta(pro);
+          const works = data.works.filter((w) => w.proSlug === pro.slug).slice(0, 5);
+          const items = works.map((w) => COMPONENTS.renderWorkItem(w, { button: true })).join("");
+          const role = meta.role ? `<p class="muted">${esc(meta.role)}</p>` : "";
+
+          return `
+            <section class="card">
+              <div class="section-head-row">
+                <div>
+                  <h2 class="h3">${esc(meta.name)}</h2>
+                  ${role}
+                </div>
+                <button
+                  class="btn btn-secondary btn-small"
+                  type="button"
+                  data-portfolio-see-all
+                  data-pro-target="${esc(pro.slug)}"
+                  aria-label="Ver tudo de ${esc(meta.name)}"
+                >
+                  Ver tudo de ${esc(meta.name)}
+                </button>
+              </div>
+              <div class="grid grid-4 gallery">${items}</div>
+            </section>
+          `;
+        })
+        .join("");
+
+      grouped.innerHTML = sections;
+      grouped.hidden = false;
+      grid.hidden = true;
+      if (empty) empty.hidden = true;
+      initModalGallery(data, grouped);
+    }
+
+    function render() {
+      const hasQuery = query.trim().length > 0;
+      const shouldGroup = activePro === "all" && activeCategory === "all" && !hasQuery;
+      if (shouldGroup) {
+        renderGrouped();
+        return;
+      }
+      renderFlat();
+    }
+
     controls.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-filter]");
-      if (!btn) return;
+      if (btn) {
+        activeCategory = btn.getAttribute("data-filter") || "all";
+        updateCategoryButtons();
+        render();
+        return;
+      }
 
-      activeCategory = btn.getAttribute("data-filter") || "all";
-      $all("[data-filter]", controls).forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-filter") === activeCategory));
+      const proBtn = e.target.closest("[data-pro-filter]");
+      if (!proBtn) return;
+
+      activePro = proBtn.getAttribute("data-pro-filter") || "all";
+      updateProButtons();
       render();
     });
 
@@ -468,6 +554,19 @@
       });
     }
 
+    if (grouped) {
+      grouped.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-portfolio-see-all]");
+        if (!btn) return;
+
+        activePro = btn.getAttribute("data-pro-target") || "all";
+        updateProButtons();
+        render();
+      });
+    }
+
+    updateCategoryButtons();
+    updateProButtons();
     render();
   }
 
