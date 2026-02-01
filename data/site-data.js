@@ -9,7 +9,6 @@
       addressLine: "Rua Chico de Paula, 213",
       addressFull: "Rua Chico de Paula, 213, Centro - Mogi Guaçu - SP",
       hours: "Seg–Sáb · 10h–19h (sob agendamento)",
-      whatsapp: "+5511999999999", // placeholder exigido
       whatsappDefaultMessage:
         "Oi! Quero agendar um horário no Monocromia Studio. Serviço: [Tattoo/Piercing/Lash/Nails]. Referências: [link/fotos].",
       socials: {
@@ -146,7 +145,7 @@
         styles: ["ESTILO 1", "ESTILO 2", "ESTILO 3"],
         photo: "assets/images/pro-ana.jpg",
         instagram: "https://www.instagram.com/_annapiercer/", // PERSONALIZE AQUI
-        whatsapp: "https://api.whatsapp.com/send/?phone=19999969679&text&type=phone_number&app_absent=0&utm_source=ig", // opcional
+        whatsapp: "+5511999990001",
         callout: "Piercing bem colocado e bem cuidado. Bora fazer certo.",
         page: "pages/pro-ana.html",
       },
@@ -159,7 +158,7 @@
         styles: ["ESTILO 1", "ESTILO 2", "ESTILO 3"],
         photo: "assets/images/pro-let.jpg",
         instagram: "https://www.instagram.com/leticiadeoliveira.lash/", // PERSONALIZE AQUI
-        whatsapp: "https://api.whatsapp.com/message/KZK6G3GYRTGUH1?autoload=1&app_absent=0&utm_source=ig",
+        whatsapp: "+5511999990002",
         callout: "FRASE DE IMPACTO.",
         page: "pages/pro-let.html",
       },
@@ -172,7 +171,7 @@
         styles: ["ESTILO 1", "ESTILO 2", "ESTILO 3"],
         photo: "assets/images/pro-vanne.jpg",
         instagram: "https://www.instagram.com/vanneink/", // PERSONALIZE AQUI
-        whatsapp: "",
+        whatsapp: "+5511999990003",
         callout: "FRASE DE IMPACTO.",
         page: "pages/pro-vanne.html",
       },
@@ -185,7 +184,7 @@
         styles: ["ESTILO 1", "ESTILO 2", "ESTILO 3"],
         photo: "assets/images/pro-letxx.jpg",
         instagram: "https://www.instagram.com/letxink/", // PERSONALIZE AQUI
-        whatsapp: "https://api.whatsapp.com/message/GL6ARHITS2NKO1?autoload=1&app_absent=0&utm_source=ig",
+        whatsapp: "+5511999990004",
         callout: "FRASE DE IMPACTO.",
         page: "pages/pro-letxx.html",
       },
@@ -198,7 +197,7 @@
         styles: ["ESTILO 1", "ESTILO 2", "ESTILO 3"],
         photo: "assets/images/pro-nath.jpg",
         instagram: "https://www.instagram.com/nathnails.designer/", // PERSONALIZE AQUI
-        whatsapp: "",
+        whatsapp: "+5511999990005",
         callout: "FRASE DE IMPACTO.",
         page: "pages/pro-nath.html",
       },

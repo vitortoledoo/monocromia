@@ -148,7 +148,7 @@
       <p><strong>${escapeHtml(brand.addressLine)}</strong> — ${escapeHtml(brand.neighborhood)}, ${escapeHtml(brand.city)}</p>
       <p class="muted">${escapeHtml(brand.hours)}</p>
       <div class="card-actions">
-        <a class="btn btn-primary" data-whatsapp-link href="#">Chamar no WhatsApp</a>
+        <a class="btn btn-primary" data-whatsapp-link href="#">Escolher profissional</a>
         <a class="btn btn-secondary" data-instagram-link href="${escapeHtml(brand.socials.instagram)}" target="_blank" rel="noreferrer">
           Instagram
         </a>

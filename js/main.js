@@ -22,23 +22,44 @@
     return String(phone || "").replace(/[^\d]/g, "");
   }
 
+  function getProfessionalsFallback() {
+    return document.location.pathname.includes("/pages/")
+      ? "./professionals.html"
+      : "./pages/professionals.html";
+  }
+
   function makeWhatsAppUrl(phoneRaw, message) {
     const phone = normalizePhone(phoneRaw);
     const text = encodeURIComponent(message || "");
     return `https://wa.me/${phone}?text=${text}`;
   }
 
-  function messageFor({ brand, serviceName, proName }) {
-    // Pedido: “Quero agendar com {NOME} para {SERVIÇO}”
-    const parts = [];
-    parts.push("Oi!");
-    if (proName && serviceName) parts.push(`Quero agendar com ${proName} para ${serviceName}.`);
-    else if (serviceName) parts.push(`Quero agendar ${serviceName}.`);
-    else parts.push("Quero agendar um horário.");
+  function messageFor({ serviceName, proName }) {
+    if (proName && serviceName) {
+      return `Oi! Quero agendar com ${proName} para ${serviceName}. Referências: [link/fotos].`;
+    }
+    if (proName) return `Oi! Quero agendar com ${proName}. Referências: [link/fotos].`;
+    if (serviceName) return `Oi! Quero agendar para ${serviceName}. Referências: [link/fotos].`;
+    return "Oi! Quero agendar um horário. Referências: [link/fotos].";
+  }
 
-    parts.push("Referências: [link/fotos].");
-    parts.push("Tamanho/local: [ex.: 8cm / antebraço].");
-    return parts.join(" ");
+  function resolveServiceName(context, data) {
+    if (!context) return "";
+    const service = data.specialties.find((s) => s.slug === context);
+    return service?.name || context;
+  }
+
+  function disableWhatsAppLink(link) {
+    link.setAttribute("href", "#");
+    link.setAttribute("aria-disabled", "true");
+    link.removeAttribute("target");
+    link.removeAttribute("rel");
+    if (!link.__waDisabledBound) {
+      link.__waDisabledBound = true;
+      link.addEventListener("click", (e) => {
+        if (link.getAttribute("aria-disabled") === "true") e.preventDefault();
+      });
+    }
   }
 
   function initYear() {
@@ -81,9 +102,57 @@
     });
   }
 
+  function renderWhatsAppChooser(data, context) {
+    const serviceName = resolveServiceName(context, data);
+    const esc = COMPONENTS.escapeHtml;
+
+    const header = `
+      <h2 class="h3">Com quem você quer agendar?</h2>
+      ${serviceName ? `<p class="muted">Serviço: ${esc(serviceName)}</p>` : ""}
+    `;
+
+    const list = data.professionals
+      .map((pro) => {
+        const name = esc(pro.name);
+        const role = esc(pro.role || "");
+        const message = messageFor({ proName: pro.name, serviceName });
+        const url = pro.whatsapp ? makeWhatsAppUrl(pro.whatsapp, message) : "";
+        const action = pro.whatsapp
+          ? `<a class="btn btn-primary" href="${esc(url)}" target="_blank" rel="noreferrer">Agendar</a>`
+          : `<button class="btn btn-primary" type="button" disabled aria-disabled="true">Indisponível</button>`;
+
+        return `
+          <div class="modal-pro-row">
+            <div>
+              <strong>${name}</strong>
+              ${role ? `<p class="muted">${role}</p>` : ""}
+            </div>
+            <div>${action}</div>
+          </div>
+        `;
+      })
+      .join("");
+
+    return `
+      <div class="modal-pro-chooser">
+        ${header}
+        <div class="modal-pro-list">${list}</div>
+      </div>
+    `;
+  }
+
+  function openWhatsAppChooser(data, context) {
+    const modal = getGlobalModal();
+    if (!modal) return false;
+    bindModalOnce();
+    openModal(renderWhatsAppChooser(data, context));
+    return true;
+  }
+
   function initBrandLinks(data) {
     const brand = data.brand;
     const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(brand.mapsQuery || brand.addressFull)}`;
+    const fallbackHref = getProfessionalsFallback();
 
     // WhatsApp
     $all("[data-whatsapp-link]").forEach((a) => {
@@ -91,18 +160,34 @@
       const proSlug = a.getAttribute("data-wa-pro");
 
       const pro = proSlug ? data.professionals.find((p) => p.slug === proSlug) : null;
-      const service = context ? data.specialties.find((s) => s.slug === context) : null;
+      if (pro) {
+        const serviceName = resolveServiceName(context, data);
+        const proName = pro.name;
+        if (!pro.whatsapp) {
+          disableWhatsAppLink(a);
+          return;
+        }
 
-      const serviceName = service?.name;
-      const proName = pro?.name;
+        const msg = messageFor({ serviceName, proName });
+        a.setAttribute("href", makeWhatsAppUrl(pro.whatsapp, msg));
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noreferrer");
+        a.removeAttribute("aria-disabled");
+        a.removeAttribute("data-wa-chooser");
+        return;
+      }
 
-      const msg = (context || proSlug)
-        ? messageFor({ brand, serviceName, proName })
-        : (brand.whatsappDefaultMessage || messageFor({ brand }));
-
-      a.setAttribute("href", makeWhatsAppUrl(brand.whatsapp, msg));
-      a.setAttribute("target", "_blank");
-      a.setAttribute("rel", "noreferrer");
+      a.setAttribute("href", fallbackHref);
+      a.setAttribute("data-wa-chooser", "true");
+      a.removeAttribute("target");
+      a.removeAttribute("rel");
+      if (!a.__waChooserBound) {
+        a.__waChooserBound = true;
+        a.addEventListener("click", (e) => {
+          if (a.getAttribute("data-wa-chooser") !== "true") return;
+          if (openWhatsAppChooser(data, context)) e.preventDefault();
+        });
+      }
     });
 
     // Instagram
