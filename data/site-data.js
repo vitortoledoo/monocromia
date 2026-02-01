@@ -184,7 +184,7 @@
         styles: ["ESTILO 1", "ESTILO 2", "ESTILO 3"],
         photo: "assets/images/pro-letxx.jpg",
         instagram: "https://www.instagram.com/letxink/", // PERSONALIZE AQUI
-        whatsapp: "+5511999990004",
+        whatsapp: "+551999494-2276",
         callout: "FRASE DE IMPACTO.",
         page: "pages/pro-letxx.html",
       },
