@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cuidados — Monocromia Studio</title>
+    <meta name="description" content="Cuidados pós-procedimento para tattoo e piercing." />
+    <meta property="og:title" content="Cuidados — Monocromia Studio" />
+    <meta property="og:description" content="Cuidados pós-procedimento para tattoo e piercing." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%230b0f14"/><path d="M16 40V24h6l10 10 10-10h6v16h-6V32l-10 10-10-10v8z" fill="%23ffffff"/></svg>' />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../data/site-data.js"></script>
+    <script defer src="../js/components.js"></script>
+    <script defer src="../js/router.js"></script>
+    <script defer src="../js/main.js"></script>
+  </head>
+
+  <body data-page="aftercare" data-base="../">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Ir para a home">
+      <span class="brand-mark" aria-hidden="true">▮</span>
+      <span class="brand-text">
+        <strong>Monocromia Studio</strong>
+        <span class="brand-sub">Mogi Guaçu · Centro</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      data-nav-toggle
+    >
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="primary-nav" aria-label="Menu principal" data-nav hidden>
+      <a href="../index.html#specialties">Especialidades</a>
+      <a href="../index.html#works">Trabalhos</a>
+      <a href="./portfolio.html">Portfólio</a>
+      <a href="./professionals.html">Profissionais</a>
+      <a href="./booking.html">Agendamento</a>
+      <a href="./aftercare.html">Cuidados</a>
+      <a href="./contact.html">Contato</a>
+      <a class="nav-cta" data-whatsapp-link href="#" aria-label="Agendar via WhatsApp">Agendar</a>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="page">
+      <section class="section">
+        <div class="container section-head">
+          <h1>Cuidados</h1>
+          <p class="muted">Orientações diretas. Se tiver qualquer reação incomum, chame a gente.</p>
+        </div>
+
+        <div class="container toc">
+          <a class="chip" href="#tattoo">Tattoo</a>
+          <a class="chip" href="#piercing">Piercing</a>
+        </div>
+
+        <div class="container grid grid-2" data-render="aftercare">
+          <!-- fallback sem JS -->
+          <section id="tattoo" class="card">
+            <h2 class="h3">Tattoo</h2>
+            <ul class="list">
+              <li>Lave com sabonete neutro e seque sem esfregar.</li>
+              <li>Use pomada conforme orientação.</li>
+              <li>Evite sol/piscina/mar nas primeiras semanas.</li>
+            </ul>
+          </section>
+
+          <section id="piercing" class="card">
+            <h2 class="h3">Piercing</h2>
+            <ul class="list">
+              <li>Higienize com soro/solução indicada.</li>
+              <li>Evite tocar/girar a joia sem necessidade.</li>
+              <li>Evite trauma e maquiagem na região.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container section-head section-head-row">
+          <div>
+            <h2>Quer confirmar seu caso?</h2>
+            <p class="muted">Chame no WhatsApp e explique o que está acontecendo.</p>
+          </div>
+          <a class="btn btn-primary" data-whatsapp-link data-wa-context="aftercare" href="#">Falar no WhatsApp</a>
+        </div>
+      </section>
+
+    </main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">▮</span>
+        <strong>Monocromia Studio</strong>
+      </div>
+      <p class="muted">Centro · Mogi Guaçu - SP. Atendimento com hora marcada.</p>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Links</h3>
+      <ul class="footer-links">
+        <li><a href="./services.html">Serviços</a></li>
+        <li><a href="./portfolio.html">Portfólio</a></li>
+        <li><a href="./professionals.html">Profissionais</a></li>
+        <li><a href="./aftercare.html">Cuidados</a></li>
+        <li><a href="./contact.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Agendar</h3>
+      <p class="muted">Prefere rápido? Use o WhatsApp.</p>
+      <a class="btn btn-primary btn-block" data-whatsapp-link href="#">Chamar no WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <small class="muted">© <span data-year>2026</span> Monocromia Studio. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<a class="wa-fab" data-whatsapp-link href="#" aria-label="Agendar via WhatsApp">
+  <span aria-hidden="true">WA</span>
+</a>
+
+<div class="modal" data-modal hidden>
+  <div class="modal-backdrop" data-modal-close tabindex="-1" aria-hidden="true"></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Visualizar item">
+    <button class="modal-close" type="button" data-modal-close aria-label="Fechar">×</button>
+    <div class="modal-content" data-modal-content></div>
+  </div>
+</div>
+
+  </body>
+</html>

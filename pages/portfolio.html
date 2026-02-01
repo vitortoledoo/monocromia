@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfólio — Monocromia Studio</title>
+    <meta name="description" content="Veja trabalhos por categoria e encontre por tags. Abra imagens em modal." />
+    <meta property="og:title" content="Portfólio — Monocromia Studio" />
+    <meta property="og:description" content="Veja trabalhos por categoria e encontre por tags. Abra imagens em modal." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%230b0f14"/><path d="M16 40V24h6l10 10 10-10h6v16h-6V32l-10 10-10-10v8z" fill="%23ffffff"/></svg>' />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script defer src="../data/site-data.js"></script>
+    <script defer src="../js/components.js"></script>
+    <script defer src="../js/router.js"></script>
+    <script defer src="../js/main.js"></script>
+  </head>
+
+  <body data-page="portfolio" data-base="../">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="../index.html" aria-label="Ir para a home">
+      <span class="brand-mark" aria-hidden="true">▮</span>
+      <span class="brand-text">
+        <strong>Monocromia Studio</strong>
+        <span class="brand-sub">Mogi Guaçu · Centro</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-controls="primary-nav"
+      aria-expanded="false"
+      data-nav-toggle
+    >
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="primary-nav" aria-label="Menu principal" data-nav hidden>
+      <a href="../index.html#specialties">Especialidades</a>
+      <a href="../index.html#works">Trabalhos</a>
+      <a href="./portfolio.html">Portfólio</a>
+      <a href="./professionals.html">Profissionais</a>
+      <a href="./booking.html">Agendamento</a>
+      <a href="./aftercare.html">Cuidados</a>
+      <a href="./contact.html">Contato</a>
+      <a class="nav-cta" data-whatsapp-link href="#" aria-label="Agendar via WhatsApp">Agendar</a>
+    </nav>
+  </div>
+</header>
+
+    <main id="main" class="page">
+      <section class="section">
+        <div class="container section-head">
+          <h1>Portfólio</h1>
+          <p class="muted">Filtre por categoria e busque por título ou tag. Clique para ampliar.</p>
+        </div>
+
+        <div class="container filters" data-portfolio-controls>
+          <div class="segmented" role="tablist" aria-label="Filtro por categoria">
+            <button class="seg-btn is-active" type="button" data-filter="all">All</button>
+            <button class="seg-btn" type="button" data-filter="tattoo">Tattoo</button>
+            <button class="seg-btn" type="button" data-filter="piercing">Piercing</button>
+            <button class="seg-btn" type="button" data-filter="lash">Lash &amp; Brow</button>
+            <button class="seg-btn" type="button" data-filter="nails">Nails</button>
+          </div>
+
+          <label class="search">
+            <span class="sr-only">Buscar por título ou tag</span>
+            <input type="search" name="q" placeholder="Buscar por título ou tag…" autocomplete="off" data-portfolio-search />
+          </label>
+        </div>
+
+        <div class="container">
+          <div class="grid grid-4 gallery" data-portfolio-grid>
+            <!-- fallback sem JS -->
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 01"><img src="../assets/images/work-01.jpg" alt="Trabalho 01" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 02"><img src="../assets/images/work-02.jpg" alt="Trabalho 02" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 03"><img src="../assets/images/work-03.jpg" alt="Trabalho 03" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 04"><img src="../assets/images/work-04.jpg" alt="Trabalho 04" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 05"><img src="../assets/images/work-05.jpg" alt="Trabalho 05" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 06"><img src="../assets/images/work-06.jpg" alt="Trabalho 06" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 07"><img src="../assets/images/work-07.jpg" alt="Trabalho 07" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 08"><img src="../assets/images/work-08.jpg" alt="Trabalho 08" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 09"><img src="../assets/images/work-09.jpg" alt="Trabalho 09" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 10"><img src="../assets/images/work-10.jpg" alt="Trabalho 10" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 11"><img src="../assets/images/work-11.jpg" alt="Trabalho 11" loading="lazy" width="800" height="800" /></button></figure>
+            <figure class="work"><button class="work-btn" type="button" aria-label="Abrir trabalho 12"><img src="../assets/images/work-12.jpg" alt="Trabalho 12" loading="lazy" width="800" height="800" /></button></figure>
+          </div>
+
+          <p class="muted mt-16" data-portfolio-empty hidden>Nenhum resultado. Tente outra busca.</p>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container section-head section-head-row">
+          <div>
+            <h2>Curtiu algum estilo?</h2>
+            <p class="muted">Chame no WhatsApp e mande o print/referências.</p>
+          </div>
+          <a class="btn btn-primary" data-whatsapp-link href="#">Agendar no WhatsApp</a>
+        </div>
+      </section>
+
+    </main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">▮</span>
+        <strong>Monocromia Studio</strong>
+      </div>
+      <p class="muted">Centro · Mogi Guaçu - SP. Atendimento com hora marcada.</p>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Links</h3>
+      <ul class="footer-links">
+        <li><a href="./services.html">Serviços</a></li>
+        <li><a href="./portfolio.html">Portfólio</a></li>
+        <li><a href="./professionals.html">Profissionais</a></li>
+        <li><a href="./aftercare.html">Cuidados</a></li>
+        <li><a href="./contact.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer-title">Agendar</h3>
+      <p class="muted">Prefere rápido? Use o WhatsApp.</p>
+      <a class="btn btn-primary btn-block" data-whatsapp-link href="#">Chamar no WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <small class="muted">© <span data-year>2026</span> Monocromia Studio. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<a class="wa-fab" data-whatsapp-link href="#" aria-label="Agendar via WhatsApp">
+  <span aria-hidden="true">WA</span>
+</a>
+
+<div class="modal" data-modal hidden>
+  <div class="modal-backdrop" data-modal-close tabindex="-1" aria-hidden="true"></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Visualizar item">
+    <button class="modal-close" type="button" data-modal-close aria-label="Fechar">×</button>
+    <div class="modal-content" data-modal-content></div>
+  </div>
+</div>
+
+  </body>
+</html>

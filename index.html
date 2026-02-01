@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Monocromia Studio — Tattoo, Piercing, Lash &amp; Brow e Nails em Mogi Guaçu</title>
+    <meta name="description" content="Estúdio minimalista no Centro de Mogi Guaçu. Tattoo, Piercing, Lash &amp; Brow e Nails. Agende pelo WhatsApp." />
+    <meta property="og:title" content="Monocromia Studio — Agende via WhatsApp" />
+    <meta property="og:description" content="Tattoo, Piercing, Lash &amp; Brow e Nails em Mogi Guaçu. Atendimento com hora marcada." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0b0f14" />
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%230b0f14"/><path d="M16 40V24h6l10 10 10-10h6v16h-6V32l-10 10-10-10v8z" fill="%23ffffff"/></svg>' />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script defer src="./data/site-data.js"></script>
+    <script defer src="./js/components.js"></script>
+    <script defer src="./js/router.js"></script>
+    <script defer src="./js/main.js"></script>
+  </head>
+
+  <body data-page="home" data-base="./">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Ir para o início">
+          <span class="brand-mark" aria-hidden="true">▮</span>
+          <span class="brand-text">
+            <strong>Monocromia Studio</strong>
+            <span class="brand-sub">Mogi Guaçu · Centro</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+
+        <nav class="nav" id="primary-nav" aria-label="Menu principal" data-nav hidden>
+          <a href="#specialties">Especialidades</a>
+          <a href="#works">Trabalhos</a>
+          <a href="#team">Equipe</a>
+          <a href="#location">Local</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contato</a>
+          <a class="nav-cta" data-whatsapp-link href="#" aria-label="Agendar via WhatsApp">Agendar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Atendimento com hora marcada · Ambiente minimalista</p>
+            <h1 class="hero-title">
+              Tattoo, Piercing, Lash &amp; Brow e Nails<br />
+              <span class="muted">no Centro de Mogi Guaçu</span>
+            </h1>
+            <p class="hero-subtitle">Direto ao ponto: você escolhe, a gente cuida dos detalhes. Agende pelo WhatsApp.</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" data-whatsapp-link href="#">Agendar no WhatsApp</a>
+              <a class="btn btn-secondary" href="./pages/portfolio.html">Ver portfólio</a>
+            </div>
+
+            <ul class="hero-points" aria-label="Diferenciais">
+              <li>Higiene e biossegurança</li>
+              <li>Profissionais especializados</li>
+              <li>Cuidados e pós-procedimento</li>
+            </ul>
+          </div>
+
+          <div class="hero-media" aria-hidden="true">
+            <div class="hero-card">
+              <div class="hero-card-top">
+                <span class="pill">Hoje</span>
+                <span class="pill pill-outline">Agendamento rápido</span>
+              </div>
+              <div class="hero-card-body">
+                <p class="hero-card-title">Resposta em minutos</p>
+                <p class="hero-card-text">Mensagem automática com o que pedir e como enviar referências.</p>
+              </div>
+              <div class="hero-card-actions">
+                <a class="btn btn-small btn-ghost" href="./pages/booking.html">Ver regras</a>
+                <a class="btn btn-small btn-primary" data-whatsapp-link href="#">Chamar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="specialties" class="section">
+        <div class="container section-head">
+          <h2>Especialidades</h2>
+          <p class="muted">Escolha um serviço e avance para o agendamento.</p>
+        </div>
+
+        <div class="container">
+          <div class="grid grid-4" data-render="specialties">
+            <!-- Fallback sem JS -->
+            <article class="card">
+              <h3>Tattoo</h3>
+              <p class="muted">Do minimal ao autoral. Traga referências.</p>
+              <a class="btn btn-secondary btn-block" href="./pages/service-tattoo.html">Ver Tattoo</a>
+            </article>
+            <article class="card">
+              <h3>Piercing</h3>
+              <p class="muted">Perfuração segura com joias selecionadas.</p>
+              <a class="btn btn-secondary btn-block" href="./pages/service-piercing.html">Ver Piercing</a>
+            </article>
+            <article class="card">
+              <h3>Lash &amp; Brow</h3>
+              <p class="muted">Realce natural: cílios e sobrancelhas.</p>
+              <a class="btn btn-secondary btn-block" href="./pages/service-lash.html">Ver Lash &amp; Brow</a>
+            </article>
+            <article class="card">
+              <h3>Nails</h3>
+              <p class="muted">Alongamento e manutenção com acabamento limpo.</p>
+              <a class="btn btn-secondary btn-block" href="./pages/service-nails.html">Ver Nails</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="section section-alt">
+        <div class="container section-head section-head-row">
+          <div>
+            <h2>Trabalhos recentes</h2>
+            <p class="muted">Uma seleção do que está rolando no estúdio.</p>
+          </div>
+          <a class="btn btn-secondary" href="./pages/portfolio.html">Ver portfólio completo</a>
+        </div>
+
+        <div class="container">
+          <div class="grid grid-4 gallery" data-render="works">
+            <!-- Fallback sem JS (12 placeholders) -->
+            <figure class="work"><img src="./assets/images/work-01.jpg" alt="Trabalho recente 01" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-02.jpg" alt="Trabalho recente 02" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-03.jpg" alt="Trabalho recente 03" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-04.jpg" alt="Trabalho recente 04" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-05.jpg" alt="Trabalho recente 05" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-06.jpg" alt="Trabalho recente 06" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-07.jpg" alt="Trabalho recente 07" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-08.jpg" alt="Trabalho recente 08" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-09.jpg" alt="Trabalho recente 09" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-10.jpg" alt="Trabalho recente 10" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-11.jpg" alt="Trabalho recente 11" loading="lazy" width="800" height="800" /></figure><figure class="work"><img src="./assets/images/work-12.jpg" alt="Trabalho recente 12" loading="lazy" width="800" height="800" /></figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="section">
+        <div class="container section-head">
+          <h2>Equipe</h2>
+          <p class="muted">Escolha um(a) profissional e agende com mensagem pronta.</p>
+        </div>
+
+        <div class="container">
+          <div class="grid grid-5" data-render="professionals">
+            <!-- Fallback sem JS -->
+            <article class="card pro-card">
+              <img class="avatar" src="./assets/images/pro-ana.jpg" alt="Foto de ANNA" loading="lazy" width="400" height="400" />
+              <h3>ANNA</h3>
+              <p class="muted">Tatuadora</p>
+              <div class="card-actions">
+                <a class="btn btn-secondary btn-block" href="./pages/pro-ana.html">Ver perfil</a>
+              </div>
+            </article>
+            <article class="card pro-card">
+              <img class="avatar" src="./assets/images/pro-let.jpg" alt="Foto de LETÍCIA" loading="lazy" width="400" height="400" />
+              <h3>LETÍCIA</h3>
+              <p class="muted">Tatuadora</p>
+              <div class="card-actions">
+                <a class="btn btn-secondary btn-block" href="./pages/pro-let.html">Ver perfil</a>
+              </div>
+            </article>
+            <article class="card pro-card">
+              <img class="avatar" src="./assets/images/pro-vanne.jpg" alt="Foto de VANNEINK" loading="lazy" width="400" height="400" />
+              <h3>VANNEINK</h3>
+              <p class="muted">Lash &amp; Brow</p>
+              <div class="card-actions">
+                <a class="btn btn-secondary btn-block" href="./pages/pro-vanne.html">Ver perfil</a>
+              </div>
+            </article>
+            <article class="card pro-card">
+              <img class="avatar" src="./assets/images/pro-letxx.jpg" alt="Foto de letxink" loading="lazy" width="400" height="400" />
+              <h3>LETXINK</h3>
+              <p class="muted">Nails</p>
+              <div class="card-actions">
+                <a class="btn btn-secondary btn-block" href="./pages/pro-letxx.html">Ver perfil</a>
+              </div>
+            </article>
+            <article class="card pro-card">
+              <img class="avatar" src="./assets/images/pro-nath.jpg" alt="Foto de nathnails" loading="lazy" width="400" height="400" />
+              <h3>NATH NAILS</h3>
+              <p class="muted">Piercing</p>
+              <div class="card-actions">
+                <a class="btn btn-secondary btn-block" href="./pages/pro-nath.html">Ver perfil</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="location" class="section section-alt">
+        <div class="container section-head">
+          <h2>Local</h2>
+          <p class="muted">Centro · Mogi Guaçu — fácil acesso e estacionamento próximo.</p>
+        </div>
+
+        <div class="container location-grid">
+          <div class="card">
+            <h3>Endereço</h3>
+            <p><strong>Rua Exemplo, 123</strong> — Centro, Mogi Guaçu - SP</p>
+            <p class="muted">Seg–Sáb · 10h–19h (sob agendamento)</p>
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="./pages/contact.html">Ver contatos</a>
+              <a class="btn btn-primary" data-maps-link href="#" target="_blank" rel="noreferrer">Abrir no Google Maps</a>
+            </div>
+          </div>
+
+          <div class="map card" aria-label="Mapa do estúdio">
+            <iframe
+              title="Mapa (Google Maps)"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Centro%20Mogi%20Gua%C3%A7u%20SP&output=embed"
+            ></iframe>
+            <p class="sr-only">Se o mapa não carregar, use o botão “Abrir no Google Maps”.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container section-head">
+          <h2>FAQ</h2>
+          <p class="muted">Perguntas rápidas, respostas diretas.</p>
+        </div>
+
+        <div class="container" data-render="faq">
+          <!-- Fallback sem JS -->
+          <div class="accordion">
+            <details class="accordion-item">
+              <summary>Preciso dar sinal?</summary>
+              <div class="accordion-panel"><p>Sim, para confirmar data e horário.</p></div>
+            </details>
+            <details class="accordion-item">
+              <summary>Posso reagendar?</summary>
+              <div class="accordion-panel"><p>Sim, seguindo a política de cancelamento.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container section-head section-head-row">
+          <div>
+            <h2>Contato</h2>
+            <p class="muted">Chame no WhatsApp e diga o serviço + referências.</p>
+          </div>
+          <a class="btn btn-primary" data-whatsapp-link href="#">Agendar agora</a>
+        </div>
+
+        <div class="container grid grid-2">
+          <div class="card">
+            <h3>WhatsApp</h3>
+            <p class="muted">Resposta automática + orientação para enviar fotos e medidas.</p>
+            <a class="btn btn-secondary btn-block" data-whatsapp-link href="#">Abrir WhatsApp</a>
+          </div>
+
+          <div class="card">
+            <h3>Instagram</h3>
+            <p class="muted">Bastidores, curas, e trabalhos novos.</p>
+            <a class="btn btn-secondary btn-block" data-instagram-link href="#" target="_blank" rel="noreferrer">Abrir Instagram</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">▮</span>
+            <strong>Monocromia Studio</strong>
+          </div>
+          <p class="muted">Minimalismo, técnica e cuidado. Centro · Mogi Guaçu - SP.</p>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Links</h3>
+          <ul class="footer-links">
+            <li><a href="./pages/services.html">Serviços</a></li>
+            <li><a href="./pages/portfolio.html">Portfólio</a></li>
+            <li><a href="./pages/professionals.html">Profissionais</a></li>
+            <li><a href="./pages/aftercare.html">Cuidados</a></li>
+            <li><a href="./pages/contact.html">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">Agendar</h3>
+          <p class="muted">Prefere rápido? Use o WhatsApp.</p>
+          <a class="btn btn-primary btn-block" data-whatsapp-link href="#">Chamar no WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small class="muted">© <span data-year>2026</span> Monocromia Studio. Todos os direitos reservados.</small>
+      </div>
+    </footer>
+
+    <a class="wa-fab" data-whatsapp-link href="#" aria-label="Agendar via WhatsApp"><span aria-hidden="true">WA</span></a>
+
+    <div class="modal" data-modal hidden>
+      <div class="modal-backdrop" data-modal-close tabindex="-1" aria-hidden="true"></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Visualizar item">
+        <button class="modal-close" type="button" data-modal-close aria-label="Fechar">×</button>
+        <div class="modal-content" data-modal-content></div>
+      </div>
+    </div>
+  </body>
+</html>
